@@ -5,160 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: #f5f3f0;
-            color: #333;
-        }
+body {
+    <!-- Navbar -->
+<div class="navbar">
+    <h2>☕ Bean Bliss</h2>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Menu</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
 
-        /* Navbar */
-        nav {
-            background: #3e2723;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            position: sticky;
-            top: 0;
-        }
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Coffee time is a chance to slow down</h1>
+        <p>Premium roasted beans, handcrafted drinks, and a cozy space to relax, work, and enjoy every sip.</p>
+        <button class="btn-primary">View Menu</button>
+        <button class="btn-secondary">About Us</button>
+    </div>
+</div>
 
-        nav h2 {
-            margin: 0;
-            letter-spacing: 1px;
-        }
+<!-- About Section -->
+<div class="section">
+    <div class="section-text">
+        <h2>We make delicious coffee for coffee lovers</h2>
+        <p>
+            At Bean Bliss Café, we carefully select high-quality beans and craft each cup with passion.
+            Whether you prefer a strong espresso or a creamy latte, we serve comfort in every cup.
+        </p>
+        <button class="btn-primary">Read More</button>
+    </div>
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-        }
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+</div>
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f3f0;
+}
 
-        /* Hero Section */
-        header {
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
 
-        .hero-content {
-            background: rgba(0,0,0,0.5);
-            padding: 30px 40px;
-            border-radius: 10px;
-        }
+.navbar h2 {
+    margin: 0;
+    letter-spacing: 1px;
+}
 
-        .hero-content h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
-        }
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
 
-        .hero-content p {
-            margin-bottom: 20px;
-            font-size: 16px;
-        }
+.navbar a:hover {
+    opacity: 0.8;
+}
 
-        .cta {
-            background: #6d4c41;
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 15px;
-        }
+/* Hero Section */
+.hero {
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
 
-        .cta:hover {
-            background: #3e2723;
-        }
+/* Dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
 
-        /* Sections */
-        .section {
-            padding: 60px 40px;
-            text-align: center;
-        }
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 500px;
+}
 
-        .section h2 {
-            margin-bottom: 40px;
-            color: #3e2723;
-        }
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
 
-        /* Menu Cards */
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
 
-        .card {
-            background: white;
-            width: 260px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: 0.3s;
-        }
+.btn-primary {
+    background: #c67c4e;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-        }
+.btn-secondary {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
+.btn-primary:hover {
+    background: #a65f36;
+}
 
-        .card-content {
-            padding: 15px;
-        }
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
 
-        .price {
-            color: #6d4c41;
-            font-weight: bold;
-        }
+/* Light Section */
+.section {
+    padding: 70px 80px;
+    background: white;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
 
-        .btn {
-            margin-top: 10px;
-            background: #6d4c41;
-            color: white;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+.section-text {
+    max-width: 500px;
+}
 
-        .btn:hover {
-            background: #3e2723;
-        }
+.section-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
 
-        /* About */
-        .about {
-            max-width: 800px;
-            margin: auto;
-            line-height: 1.6;
-            font-size: 15px;
-        }
+.section-text p {
+    color: #666;
+    line-height: 1.6;
+}
 
-        /* Footer */
-        footer {
-            background: #3e2723;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+.section img {
+    width: 420px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+</style>
+
 </head>
 
 <body>
