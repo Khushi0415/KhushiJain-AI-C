@@ -1,22 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Demo Page</title>
+    <title>Winter Demo - Khushi Jain</title>
     <style>
         body {
-            font-family: Arial;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #f2f2f2;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #a8e6ff, #e6f7ff);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1 { color: #333; }
-        p { font-size: 18px; }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #0077b6;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .snow {
+            position: fixed;
+            top: -10px;
+            color: white;
+            font-size: 20px;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Hello!</h1>
-    <p>This is my GitHub demo webpage.</p>
+
+<div class="container">
+    <h1>❄ Winter Vibes ❄</h1>
     <p>Name: Khushi Jain</p>
     <p>Project: AI-C Submission</p>
+    <p>Stay Warm & Keep Coding ☕</p>
+</div>
+
+<!-- Snow Effect -->
+<script>
+    function createSnow() {
+        const snow = document.createElement("div");
+        snow.classList.add("snow");
+        snow.innerHTML = "❄";
+        snow.style.left = Math.random() * window.innerWidth + "px";
+        snow.style.animationDuration = (Math.random() * 3 + 2) + "s";
+        document.body.appendChild(snow);
+
+        setTimeout(() => {
+            snow.remove();
+        }, 5000);
+    }
+
+    setInterval(createSnow, 200);
+</script>
+
 </body>
 </html>
