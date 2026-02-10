@@ -5,204 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-body {
-    <!-- Navbar -->
-<div class="navbar">
-    <h2>☕ Bean Bliss</h2>
-    <div>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Menu</a>
-        <a href="#">Contact</a>
-    </div>
-</div>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f3f0;
+            color: #333;
+        }
 
-<!-- Hero -->
-<div class="hero">
-    <div class="hero-content">
-        <h1>Coffee time is a chance to slow down</h1>
-        <p>Premium roasted beans, handcrafted drinks, and a cozy space to relax, work, and enjoy every sip.</p>
-        <button class="btn-primary">View Menu</button>
-        <button class="btn-secondary">About Us</button>
-    </div>
-</div>
+        /* Navbar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            z-index: 10;
+        }
 
-<!-- About Section -->
-<div class="section">
-    <div class="section-text">
-        <h2>We make delicious coffee for coffee lovers</h2>
-        <p>
-            At Bean Bliss Café, we carefully select high-quality beans and craft each cup with passion.
-            Whether you prefer a strong espresso or a creamy latte, we serve comfort in every cup.
-        </p>
-        <button class="btn-primary">Read More</button>
-    </div>
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
 
-    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-</div>
+        /* Hero */
+        .hero {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+        }
 
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #f5f3f0;
-}
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
 
-/* Navbar */
-.navbar {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-    z-index: 10;
-}
+        .hero-content {
+            position: relative;
+            color: white;
+            max-width: 500px;
+        }
 
-.navbar h2 {
-    margin: 0;
-    letter-spacing: 1px;
-}
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 14px;
-}
+        .btn-primary {
+            background: #c67c4e;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-.navbar a:hover {
-    opacity: 0.8;
-}
+        /* Sections */
+        .section {
+            padding: 60px 80px;
+            text-align: center;
+        }
 
-/* Hero Section */
-.hero {
-    height: 500px;
-    background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 0 80px;
-}
+        /* Menu */
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-/* Dark overlay */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.6);
-}
+        .card {
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: 0.3s;
+        }
 
-.hero-content {
-    position: relative;
-    color: white;
-    max-width: 500px;
-}
+        .card:hover {
+            transform: translateY(-6px);
+        }
 
-.hero-content h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
+        .card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
 
-.hero-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
-    line-height: 1.5;
-}
+        .card-content {
+            padding: 15px;
+        }
 
-.btn-primary {
-    background: #c67c4e;
-    border: none;
-    color: white;
-    padding: 12px 28px;
-    margin-right: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 15px;
-}
+        .price {
+            color: #c67c4e;
+            font-weight: bold;
+        }
 
-.btn-secondary {
-    background: transparent;
-    border: 1px solid white;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+        .btn {
+            margin-top: 8px;
+            background: #c67c4e;
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
 
-.btn-primary:hover {
-    background: #a65f36;
-}
+        /* About */
+        .about {
+            max-width: 700px;
+            margin: auto;
+            color: #555;
+            line-height: 1.6;
+        }
 
-.btn-secondary:hover {
-    background: white;
-    color: black;
-}
-
-/* Light Section */
-.section {
-    padding: 70px 80px;
-    background: white;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-.section-text {
-    max-width: 500px;
-}
-
-.section-text h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
-
-.section-text p {
-    color: #666;
-    line-height: 1.6;
-}
-
-.section img {
-    width: 420px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-</style>
-
+        /* Footer */
+        footer {
+            background: #3e2723;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
 <!-- Navbar -->
-<nav>
-    <h2>Bean Bliss</h2>
+<div class="navbar">
+    <h2>☕ Bean Bliss</h2>
     <div>
         <a href="#">Home</a>
         <a href="#">Menu</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
     </div>
-</nav>
+</div>
 
-<!-- Hero -->
-<header>
+<!-- Hero Section -->
+<div class="hero">
     <div class="hero-content">
-        <h1>Bean Bliss Café</h1>
-        <p>Premium Coffee. Cozy Ambience. Perfect Moments.</p>
-        <button class="cta">View Menu</button>
+        <h1>Coffee time is a chance to slow down</h1>
+        <p>Premium roasted beans and a cozy place to relax.</p>
+        <button class="btn-primary">View Menu</button>
     </div>
-</header>
+</div>
 
 <!-- Menu Section -->
 <div class="section">
     <h2>Our Signature Coffees</h2>
 
     <div class="menu">
-
         <div class="card">
             <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
             <div class="card-content">
@@ -238,22 +202,20 @@ body {
                 <button class="btn">Order</button>
             </div>
         </div>
-
     </div>
 </div>
 
-<!-- About -->
+<!-- About Section -->
 <div class="section">
-    <h2>About Us</h2>
+    <h2>About Bean Bliss</h2>
     <div class="about">
         At Bean Bliss Café, we serve freshly brewed coffee made from premium roasted beans.
-        Our space is designed for comfort, productivity, and relaxation — whether you're working,
-        meeting friends, or enjoying your quiet coffee time.
+        A perfect space to relax, work, and enjoy quality coffee moments.
     </div>
 </div>
 
 <footer>
-    <p>© 2026 Bean Bliss Café | Designed by XYZ</p>
+    © 2026 Bean Bliss Café | Designed by Khushi Jain
 </footer>
 
 </body>
